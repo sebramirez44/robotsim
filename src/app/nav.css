@@ -1,3 +1,4 @@
+
 nav {
     display:flex;
     flex-direction:row;
@@ -39,4 +40,20 @@ li {
 img {
     border-radius:50em;
     /* border: 1px solid grey; */
+}
+
+.imageTitle {
+    margin-left: 0.5em;
+    font-family:'Montserrat'
+}
+.navItem {
+    text-decoration: none;
+    color:black;
+    /* hacer que onhover el color sea dq gris */
+    font-size:1.4em;
+    font-weight: bold;
+    font-family: 'Roboto'
+}
+.navItem:hover {
+    color: rgb(99, 99, 99);
 }
