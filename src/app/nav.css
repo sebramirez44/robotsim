@@ -1,0 +1,42 @@
+nav {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-start
+
+}
+p {
+    width: 70%;
+}
+ul {
+    display:flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    width:50%;
+}
+li {
+
+}
+.branding {
+    width: 100%;
+}
+.navbar {
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    background-color:white;
+    align-items:center;
+    padding-top:1.5%;
+    padding-left:2.5%;
+    padding-bottom:1.5%;
+    border: 1px solid black;
+}
+.imgFluid {
+    width: 15%;
+    border-radius:1em;
+    display:flex;
+    align-items:center;
+}
+img {
+    border-radius:50em;
+    /* border: 1px solid grey; */
+}
