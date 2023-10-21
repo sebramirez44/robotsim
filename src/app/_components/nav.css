@@ -44,7 +44,9 @@ img {
 
 .imageTitle {
     margin-left: 0.5em;
-    font-family:'Montserrat'
+    font-family:'Montserrat';
+    text-decoration: none;
+    color:black;
 }
 .navItem {
     text-decoration: none;
