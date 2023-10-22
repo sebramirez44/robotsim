@@ -44,3 +44,29 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.saveBtn {
+  color: white;
+  background-color: green;
+  padding:1%;
+  border: 1px solid black;
+  border-radius: 0.7em;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-top: 2.5%;
+  margin-left:1%;
+}
+.saveBtn:hover {
+  cursor:pointer;
+  background-color:rgb(1, 88, 1);
+}
+.codeEditorUnity {
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  width: 100%;
+  margin-top:2.5%;
+}
+.UnityPart {
+  width: 50%;
+}

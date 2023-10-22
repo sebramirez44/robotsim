@@ -1,9 +1,11 @@
 "use client";
 import Navbar from '../_components/navbar'
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import React, { useRef } from 'react';
+// import 'react-multi-carousel/lib/styles.css';
+import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+
+
 
 const responsive = {
   superLargeDesktop: {
@@ -48,29 +50,44 @@ const lessons = [lesson, lesson2, lesson3, lesson, lesson2, lesson3, lesson, les
 
 export default function Home() {
   const editorRef = useRef(null);
+  const [code, setCode] = useState("");
+
+  const log = () => {
+    if (editorRef.current) {
+        // aqui mandar lo que actualmente hay al API
+      console.log(editorRef.current.getContent());
+    }
+  };
   return (
     <div className="root-layoutSim">
       <Navbar/>
       <div className="codeEditorUnity">
-        <Editor
-            apiKey='7pd2k3jdfcnbj63vx5w175rqled6y75246b2hn85x0q0uqhx'
-            onInit={(evt, editor) => editorRef.current = editor}
-            initialValue="<p>This is the initial content of the editor.</p>"
-            init={{
-            height: 500,
-            menubar: false,
-            plugins: [
-                'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-                'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
-            ],
-            toolbar: 'undo redo | blocks | ' +
-                'bold italic forecolor | alignleft aligncenter ' +
-                'alignright alignjustify | bullist numlist outdent indent | ' +
-                'removeformat | help',
-            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-            }}
-        />
+        <div className="codeEditor">
+            <Editor
+                apiKey='7pd2k3jdfcnbj63vx5w175rqled6y75246b2hn85x0q0uqhx'
+                onInit={(evt, editor) => editorRef.current = editor}
+                initialValue=""
+                init={{
+                height: 500,
+                menubar: false,
+                plugins: [
+                    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                    'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+                ],
+                toolbar: 'undo redo | blocks | ' +
+                    'bold italic forecolor | alignleft aligncenter ' +
+                    'alignright alignjustify | bullist numlist outdent indent | ' +
+                    'removeformat | help',
+                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                }}
+            />
+            <button onClick={log} className="saveBtn">Save</button>
+        </div>
+        <div className="UnityPart">
+            
+        </div>
+        
       </div>
       
     </div>
