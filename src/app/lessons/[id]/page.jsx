@@ -10,7 +10,6 @@
 
 "use client";
 import Navbar from '../../_components/navbar'
-import Carousel from 'react-multi-carousel';
 // import 'react-multi-carousel/lib/styles.css';
 import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';

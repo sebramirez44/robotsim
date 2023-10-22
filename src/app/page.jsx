@@ -56,9 +56,7 @@ export default function Home() {
   return (
     <div className="root-layout">
       <Navbar/>
-      {lessonsArr.map((item, index) => (
-        <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} key={index} />
-      ))}
+      
       <div className="Content">
         <p className="subtitle">Continue Lessons</p>
         {/* <div className="cardsRow">
@@ -68,17 +66,21 @@ export default function Home() {
             </div>
           ))}
         </div> */}
-        <Carousel
+        {lessonsArr.length > 0 && 
+          <Carousel
           responsive={responsive}
           itemClass="classCard"
           infinite={false} // Add this line to restrict navigation
 
-        >
-          {lessons.map((item, index) => (
-            <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} key={index} />
-          ))}
+           >
+          {lessonsArr.map((item, index) => {
+            console.log(item);
+            return <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} key={index} />
+          })}
 
         </Carousel>
+        }
+        
 
 
         <p className="subtitle">Recommended Lessons</p>
