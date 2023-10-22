@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
         <div>
             <nav className="navbar" >
-            <link rel="stylesheet" href="./nav.css" />
+            {/* <link rel="stylesheet" href="./nav.css" /> */}
 
             {/* poner la image del logo */}
             <div className="branding">
