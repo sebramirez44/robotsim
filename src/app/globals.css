@@ -6,4 +6,33 @@ body {
 .root-layout {
   margin: 0;
   padding:0;
+  
+}
+.Content {
+  padding-left:2.5%;
+}
+.classCard:not(:first-of-type){
+  display: flex;
+  flex-direction:row;
+  margin-left:5%;
+
+}
+.classCard img {
+  border-radius:1em;
+}
+.cardsRow {
+  display: flex;
+  flex-direction:row;
+  width: 100%;
+}
+/* de aqui abajo poner en otro file maybe */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }

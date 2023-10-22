@@ -3,7 +3,7 @@ import './nav.css'
 import styles from './nav.css'
 export default function Navbar() {
     return (
-        <div className={styles.wrapper}>
+        <div>
             <nav className="navbar" >
             <link rel="stylesheet" href="./nav.css" />
 
