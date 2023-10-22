@@ -6,7 +6,6 @@ import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
 
-
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -85,7 +84,7 @@ export default function Home() {
             <button onClick={log} className="saveBtn">Save</button>
         </div>
         <div className="UnityPart">
-            
+            <Unitysim/>
         </div>
         
       </div>

@@ -15,6 +15,7 @@ import Carousel from 'react-multi-carousel';
 import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { searchById } from "../../firebase"
+import Unitysim from '../../_components/unity';
 
 
 
@@ -77,7 +78,7 @@ export default function Home({ params }) {
   return (
     <div className="root-layoutSim">
       <Navbar/>
-      <div classNasme="lessonTitle">{myObject.title}</div>
+      <div className="lessonTitle">{myObject.title}</div>
       <div className="lessonDescription">{myObject.description}</div>
       <div className="codeEditorUnity">
         <div className="codeEditor">
@@ -103,7 +104,7 @@ export default function Home({ params }) {
             <button onClick={log} className="saveBtn">Save</button>
         </div>
         <div className="UnityPart">
-            
+            <Unitysim/>
         </div>
         
       </div>

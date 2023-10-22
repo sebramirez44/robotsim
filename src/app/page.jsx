@@ -4,7 +4,7 @@ import Navbar from './_components/navbar.jsx'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CardSeb from "./_components/cardSeb.jsx";
-
+import { getLessons } from "./firebase.js";
 
 const responsive = {
   superLargeDesktop: {
@@ -51,10 +51,14 @@ const lessons = [lesson, lesson2, lesson3, lesson, lesson2, lesson3, lesson, les
 
 export default function Home() {
   const [hovered, setHovered] = useState(false);
-
+  const [lessonsArr, setLessonsArr] = useState([]);
+  getLessons().then((result) => setLessonsArr(result))
   return (
     <div className="root-layout">
       <Navbar/>
+      {lessonsArr.map((item, index) => (
+        <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} key={index} />
+      ))}
       <div className="Content">
         <p className="subtitle">Continue Lessons</p>
         {/* <div className="cardsRow">
@@ -71,7 +75,7 @@ export default function Home() {
 
         >
           {lessons.map((item, index) => (
-            <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} />
+            <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} key={index} />
           ))}
 
         </Carousel>
@@ -84,7 +88,7 @@ export default function Home() {
           containerClass="carousel-container"
         >
           {lessons.map((item, index) => (
-            <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} />
+            <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} key={index} />
           ))}
 
         </Carousel>

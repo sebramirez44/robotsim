@@ -11,7 +11,8 @@ import {
     collection,
     addDoc,
     doc,
-    getDoc
+    getDoc,
+    getDocs
   } from "firebase/firestore";
 
 
@@ -64,6 +65,17 @@ const searchById = async (id, collection) => {
     const snap = await getDoc(doc(db, collection, id))
     return snap.data();
 }
+
+async function getLessons() {
+    const docsArray = []
+    const querySnapshot = await getDocs(collection(db, "lessons"));
+    querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        docsArray.push(doc.data())
+    });
+    return docsArray;
+}
   
 
 export {
@@ -72,6 +84,7 @@ export {
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     logout,
-    searchById
+    searchById,
+    getLessons
 }
 
