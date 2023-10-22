@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Navbar from './_components/navbar'
+import Navbar from './_components/navbar.jsx'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -50,27 +50,42 @@ export default function Home() {
     <div className="root-layout">
       <Navbar/>
       <div className="Content">
-        <p>Continue Lessons</p>
-        <div className="cardsRow">
+        <p className="subtitle">Continue Lessons</p>
+        {/* <div className="cardsRow">
           {lessons.map((item, index) => (
             <div key={index} className="classCard">
               <img src={item.pathToImage} width="100%"/>
             </div>
           ))}
-        </div>
-        <Carousel responsive={responsive}>
+        </div> */}
+        <Carousel
+          responsive={responsive}
+          itemClass="classCard"
+          infinite={false} // Add this line to restrict navigation
+
+        >
           {lessons.map((item, index) => (
-            <div key={index} className="classCard">
-              <img src={item.pathToImage} width="100%"/>
+            <div key={index}>
+              <img key={index} src={item.pathToImage} className="lesson-image"  />
             </div>
           ))}
+
         </Carousel>
 
 
-        <p>Recommended Lessons</p>
-        <div>
+        <p className="subtitle">Recommended Lessons</p>
+        <Carousel
+          responsive={responsive}
+          itemClass="classCard"
+          containerClass="carousel-container"
+        >
+          {lessons.map((item, index) => (
+            <div key={index}>
+              <img key={index} src={item.pathToImage} className="lesson-image"  />
+            </div>
+          ))}
 
-        </div>
+        </Carousel>
       </div>
       
     </div>

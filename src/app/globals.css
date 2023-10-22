@@ -14,9 +14,13 @@ body {
 .classCard:not(:first-of-type){
   display: flex;
   flex-direction:row;
-  margin-left:5%;
+  margin-left:10%;
 
 }
+.classCard:first-of-type {
+  padding-left:0%;
+}
+
 .classCard img {
   border-radius:1em;
 }
@@ -25,14 +29,18 @@ body {
   flex-direction:row;
   width: 100%;
 }
-/* de aqui abajo poner en otro file maybe */
-.embla {
-  overflow: hidden;
+
+/* YourCarouselStyles.css */
+/* .lesson-image {
+  width:100%;  
+} */
+.subtitle {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 1.4em;
+  padding-left:1em;
 }
-.embla__container {
-  display: flex;
-}
-.embla__slide {
-  flex: 0 0 100%;
-  min-width: 0;
+.root-layoutSim {
+  margin: 0;
+  padding: 0;
 }
