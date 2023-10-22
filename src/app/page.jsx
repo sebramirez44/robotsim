@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import Navbar from './_components/navbar.jsx'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import CardSeb from "./_components/cardSeb.jsx";
 
 
 const responsive = {
@@ -28,24 +29,28 @@ const lesson = {
   title: "Move forward",
   pathToImage: "/imagen1.png",
   description: "this is a brief description of the actual lesson contents",
-  key: 0
+  key: 0,
+  hover: false
 }
 const lesson2 = {
   title: "Move backward",
   pathToImage: "/imagen2.png",
   description: "this is a brief description of another one of the contents",
-  key: 1
+  key: 1,
+  hover: false
 }
 const lesson3 = {
   title: "Move middle",
   pathToImage: "/imagen3.png",
   description: "this is another brief description of the contents of another lesson", 
-  key: 2
+  key: 2,
+  hover: true
 }
 
 const lessons = [lesson, lesson2, lesson3, lesson, lesson2, lesson3, lesson, lesson2]
 
 export default function Home() {
+  const [hovered, setHovered] = useState(false);
 
   return (
     <div className="root-layout">
@@ -66,9 +71,7 @@ export default function Home() {
 
         >
           {lessons.map((item, index) => (
-            <div key={index}>
-              <img key={index} src={item.pathToImage} className="lesson-image"  />
-            </div>
+            <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} />
           ))}
 
         </Carousel>
@@ -81,9 +84,7 @@ export default function Home() {
           containerClass="carousel-container"
         >
           {lessons.map((item, index) => (
-            <div key={index}>
-              <img key={index} src={item.pathToImage} className="lesson-image"  />
-            </div>
+            <CardSeb title={item.title} description={item.description} imageURL={item.pathToImage} />
           ))}
 
         </Carousel>

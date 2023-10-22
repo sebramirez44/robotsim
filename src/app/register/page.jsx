@@ -20,9 +20,9 @@ export default function LogIn() {
     e.preventDefault();
 
     try {
-      await registerWithEmailAndPassword(auth, formEmail, formPassword);
-      // Redirect or do something else on successful login
-      console.log("successful login!!!")
+      await registerWithEmailAndPassword(formEmail, formPassword);
+      // Redirect or do something else on successful register
+      console.log("successful register!!!")
     } catch (error) {
       console.log(error)
     }

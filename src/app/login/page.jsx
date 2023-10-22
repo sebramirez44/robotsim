@@ -2,7 +2,7 @@
 import Navbar from '../_components/navbar'
 // import 'react-multi-carousel/lib/styles.css';
 import React, { useRef, useState, useEffect } from 'react';
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../firebase";
+import { auth, logInWithEmailAndPassword } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function LogIn() {

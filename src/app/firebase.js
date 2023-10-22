@@ -10,7 +10,10 @@ import {
     getFirestore,
     collection,
     addDoc,
+    doc,
+    getDoc
   } from "firebase/firestore";
+
 
   import { initializeApp } from "firebase/app";
 
@@ -38,13 +41,12 @@ const logInWithEmailAndPassword = async (email, password) => {
     }
 }
 
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
         const user = res.user;
         await addDoc(collection(db, "users"), {
             uid: user.uid,
-            name,
             authProvider: "local",
             email
         });
@@ -58,11 +60,18 @@ const logout = () => {
     signOut(auth);
 }
 
+const searchById = async (id, collection) => {
+    const snap = await getDoc(doc(db, collection, id))
+    return snap.data();
+}
+  
+
 export {
     auth,
     db,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
-    logout
+    logout,
+    searchById
 }
 
